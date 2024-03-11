@@ -1,0 +1,70 @@
+{
+  "name": "kops-explorer",
+  "displayName": "Kops-Explorer",
+  "description": "\"Kops Explorer: Simplify Kops-managed Kubernetes clusters in VS Code. Navigate, monitor, and manage with ease.\"",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "kops-explorer",
+          "name": "Kops-Explorer",
+          "icon": "./icon.svg",
+          "title": "Kops-Explorer"
+        }
+      ]
+    },
+    "views": {
+      "kops-explorer": [
+        {
+          "id": "package-dependencies",
+          "name": "Dependencies",
+          "type": "tree"
+        },
+        {
+          "id": "package-outline",
+          "name": "Outline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "kops-explorer.listClusters",
+        "title": "Kops-Explorer: List Clusters"
+      },
+      {
+        "command": "kops-explorer.newCluster",
+        "title": "Kops-Explorer: New Cluster"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "build": "node esbuild.config.js --watch"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
