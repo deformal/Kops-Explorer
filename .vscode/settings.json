@@ -13,5 +13,6 @@
     "editor.fontLigatures": true,
     "editor.fontWeight": "normal",
     "editor.cursorStyle": "underline",
-    "terminal.integrated.cursorStyle": "underline"
+    "terminal.integrated.cursorStyle": "underline",
+    "workbench.colorTheme": "Bandori MyGO!!!!!"
 }
